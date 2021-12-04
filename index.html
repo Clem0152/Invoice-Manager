@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Invoice Manager</title>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <main id="app">
+    <header>    
+      <h1>Invoices</h1>
+      <p>There are some invoices here {{ ls }}</p>
+      <div class="topButtons">
+        <select id="filter" v-model="status">
+          <option value="select" selected>Filter by status</option>
+          <option value="Draft">Draft</option>
+          <option value="Pending">Pending</option>
+        <option value="Paid">Paid</option>
+        </select>
+        <button class="new" v-on:click="newInv = !newInv">New Invoice</button>
+      </div>
+      <div class="createInvoice edit" v-if="newInv === true">
+        <form @submit.prevent>
+          <h2>New Invoice</h2>
+          <input type="text" v-model="create.client">
+          <input type="number" v-model="create.amount">
+          <select v-model="create.status">
+            <option value="Paid">Paid</option>
+            <option value="Draft">Draft</option>
+            <option value="Pending">Pending</option>
+          </select>
+          <button type="submit" v-on:click="addInvoice">Submit</button>
+        </form>
+      </div>
+    </header>
+    <div class="invoiceList">
+      <invoice-item
+        v-for="invoice in filteredInvoices"
+        :key="invoice.number"
+        :initial-number="invoice.number"
+        :initial-client="invoice.client"
+        :initial-amount="invoice.amount"
+        :initial-status="invoice.status"
+        @update-invoice="updateInvoice"
+      />
+    </div>
+  </main>
+  <script src="invoices.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

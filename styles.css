@@ -1,0 +1,109 @@
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(228, 227, 227);
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+.invoiceList {
+    width: 100%;
+    margin: auto;
+}
+
+.invoice {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    padding: 0.3em;
+    border-radius: 10px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;;
+}
+
+button {
+    background-color: #017aff;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#filter {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 150px;
+}
+
+.topButtons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.paid {
+    background-color: lightgreen;
+}
+
+.draft {
+    background-color: rgb(206, 206, 206);
+}
+
+.pending {
+    background-color: lightskyblue;
+}
+
+.invItem {
+    width: 20%;
+}
+
+.edit {
+    cursor: pointer;
+}
+
+.update {
+    background-color: white;
+    border-radius: 10px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    align-items: center;
+}
+
+.createInvoice {
+    background-color: white;
+    border-radius: 10px;
+    justify-content: space-around;
+    margin: auto;
+    align-items: center;
+}
+
+.edit input,
+.edit select {
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+}
